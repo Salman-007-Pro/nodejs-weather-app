@@ -12,9 +12,7 @@ weatherForm.addEventListener("submit", async (e) => {
   try {
     message2.textContent = "Loading..";
     button.disabled = true;
-    const { data } = await axios.get(
-      `http://localhost:3000/weather?address=${searchData.value}`
-    );
+    const { data } = await axios.get(`/weather?address=${searchData.value}`);
     message1.textContent = data.location;
     message2.textContent = data.forecast;
     searchData.value = "";
